@@ -65,7 +65,7 @@ def process_line2(line: str) -> int:
             curr_digit_start += line[start]
             for digit_name, digit in possible_digits.items():
                 if digit_name in curr_digit_start:
-                    first_digit = int(possible_digits[digit_name])
+                    first_digit = int(digit)
                     check_start = False
                     break
         if line[end].isdigit() and check_end:
@@ -87,19 +87,20 @@ def process_line2(line: str) -> int:
     res = first_digit * 10 + last_digit
     return res
 
-def process_file() -> None:
+def driver():
     """
-    Main driver function to open the file and get the final sum.
+    Main driver function to open the file and get the final sum. Use
+    test_short.txt for a shorter version of input.
     """
-    res = 0
-    with open("test.txt", "r") as f:
+    res1, res2 = 0, 0
+    with open("test.txt", "r", encoding="utf-8") as f:
         lines = f.readlines()
 
     for line in lines:
-        res += process_line(line)
+        res1 += process_line(line)
+        res2 += process_line2(line)
 
-    print(f"Sum is {res}")
+    print(f"Sum for Part 1 is: {res1}, sum for Part 2 is: {res2}")
 
-# driver code
 if __name__ == "__main__":
-    process_file()
+    driver()
