@@ -26,7 +26,7 @@ def process_game(line: str) -> Tuple[int, List[List[Union[int, str]]]]:
         line (str): game line
 
     Returns:
-        Tuple[int, List[List[int, str]]]: game id and subset info in the
+        Tuple[int, List[List[Union[int, str]]]]: game id and subset info in the
         following format: [[number_of_cubes, color, ... ], ...]
     """
     game_info = line.split(":")
