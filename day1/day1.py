@@ -97,7 +97,9 @@ def driver():
         lines = f.readlines()
 
     for line in lines:
+        # For Part 1
         res1 += process_line(line)
+        # For Part 2
         res2 += process_line2(line)
 
     print(f"Sum for Part 1 is: {res1}, sum for Part 2 is: {res2}")
