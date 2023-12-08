@@ -130,7 +130,8 @@ def compare(hand1: hand, hand2: hand, p1: bool) -> hand:
         hand2_count[hand2[HAND][i]] = hand2_count.get(hand2[HAND][i], 0) + 1
 
     # determine the types of the hands
-    hand1_type, hand2_type = get_hand_type(hand1_count, p1), get_hand_type(hand2_count, p1)
+    hand1_type, hand2_type = (get_hand_type(hand1_count, p1),
+                              get_hand_type(hand2_count, p1))
     if hand1_type > hand2_type:
         return hand2
     elif hand2_type > hand1_type:
